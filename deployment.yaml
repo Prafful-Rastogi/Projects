@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prafful-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: kubeProject
+  template:
+    metadata:
+      labels:
+        app: kubeProject
+    spec:
+      containers:
+      - name: prafful-container
+        image: prastogi99/dockerrepo:testingfile
+        ports:
+        - containerPort: 9091
